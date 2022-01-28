@@ -2,12 +2,11 @@ from selenium.webdriver.common.by import By
 from selenium_master.elements.web_element import WebElement
 from selenium_master.pages.web_page import WebPage
 
-from data_for_testing.components.mixin import Mixin
+from data_for_testing.web.selenium.components.mixin import MixinSelenium
+from data_for_testing.utils import available_tabs
 
-available_tabs = ('London', 'Paris', 'Tokyo')
 
-
-class TabsPage(WebPage, Mixin):
+class TabsPageSelenium(WebPage, MixinSelenium):
     """ Correspond to tabs_page.html """
 
     def __init__(self):

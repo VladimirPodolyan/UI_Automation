@@ -2,9 +2,11 @@
 
 This project created to show [my](https://github.com/VladimirPodolyan) skills in UI automation process on Python with:
 - Python
-- [Selenium](https://pypi.org/project/selenium/) in web application
+- [Selenium](https://pypi.org/project/selenium/) in web application v1
+- [Playwright](https://pypi.org/project/playwright/) in web application v2
 - [Appium](https://pypi.org/project/Appium-Python-Client/) in Native app of iOS and Android
 - Custom wrapper of selenium/appium named `selenium_master`
+- Custom wrapper of playwright named `playwright_master`
 
 Frameworks for testing is [Tox](https://pypi.org/project/tox/) (should be manually installed) 
 & [Pytest](https://pypi.org/project/pytest/). For reports used [Allure](https://pypi.org/project/allure-pytest/).
@@ -31,6 +33,8 @@ This is how application looks like:
 
 
 ### Chrome Web automation:
+
+Note! There are two versions: in Selenium and Playwright.
 
 Web application is an edited free html pages from [W3C Sidebar](https://www.w3schools.com/w3css/w3css_sidebar.asp) 
 and [W3C Tabs](https://www.w3schools.com/w3css/w3css_tabulators.asp).

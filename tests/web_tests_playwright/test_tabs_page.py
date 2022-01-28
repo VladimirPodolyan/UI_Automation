@@ -2,7 +2,7 @@ from random import choice
 
 import pytest
 
-from data_for_testing.pages.tabs_page import available_tabs
+from data_for_testing.utils import available_tabs
 
 
 @pytest.mark.parametrize('case', available_tabs)

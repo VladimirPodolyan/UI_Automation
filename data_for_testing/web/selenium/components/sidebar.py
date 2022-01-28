@@ -1,10 +1,10 @@
 from selenium.webdriver.common.by import By
 from selenium_master.elements.web_element import WebElement
 
-from data_for_testing.components.mixin import Mixin
+from data_for_testing.web.selenium.components.mixin import MixinSelenium
 
 
-class Sidebar(WebElement, Mixin):
+class SidebarSelenium(WebElement, MixinSelenium):
     def __init__(self):
         super().__init__(By.CSS_SELECTOR, '[data-qa-marker = sidebar]', name='Sidebar')
 

@@ -1,12 +1,11 @@
 from appium.webdriver.common.mobileby import MobileBy
-
 from selenium_master.driver.core_driver import CoreDriver
 from selenium_master.elements.mobile_element import MobileElement
 from selenium_master.pages.mobile_page import MobilePage
 
 
 class CalculatorPage(MobilePage):
-    """ Correspond to android app page """
+    """ Calculator main page: correspond to android and ios app """
 
     def __init__(self):
         locator_type, locator = MobileBy.XPATH, '//*[@text="TestingBotSample"]'  # Android locator

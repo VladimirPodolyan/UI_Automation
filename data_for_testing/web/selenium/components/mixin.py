@@ -2,7 +2,7 @@ from selenium.webdriver.common.by import By
 from selenium_master.elements.web_element import WebElement
 
 
-class Mixin:
+class MixinSelenium:
 
     @property
     def cross_button(self):
