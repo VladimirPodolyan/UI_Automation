@@ -4,6 +4,7 @@ from data_for_testing.web.playwright.components.mixin import MixinPlaywright
 
 
 class SidebarPlaywright(WebElement, MixinPlaywright):
+
     def __init__(self):
         super().__init__('[data-qa-marker = sidebar]', name='Sidebar')
 

@@ -15,8 +15,7 @@ class WebPage:
 
     def get(self, url, *args, **kwargs):
         """ Get some page and wait until loaded """
-        if os.getcwd() in url:
-            sensitive_url = url.replace(os.getcwd(), '****')
+        sensitive_url = url.replace(os.getcwd(), '****') if os.getcwd() in url else url
         logging.info(f'Go to url {sensitive_url}')
         self.context.goto(url, *args, **kwargs)
         self.wait_until_opened()

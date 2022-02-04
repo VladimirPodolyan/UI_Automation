@@ -23,7 +23,7 @@ def playwright_driver(request):
         all_pytest_markers = [marker.name for marker in request.node.own_markers]
         yield driver
         if 'no_teardown' not in all_pytest_markers:
-            driver.close()
+            driver.driver.close()
 
 
 @pytest.fixture
