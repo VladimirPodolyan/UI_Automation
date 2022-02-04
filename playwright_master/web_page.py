@@ -26,3 +26,21 @@ class WebPage:
         logging.info(f'Wait until page opened {self.name}')
         self.context.wait_for_selector(self.locator)
         return self
+
+    def refresh(self):
+        """ Reload current page """
+        logging.info('Reload current page')
+        self.context.reload()
+        return self
+
+    def go_forward(self):
+        """ Go forward """
+        logging.info('Going forward')
+        self.context.go_forward()
+        return self
+
+    def go_back(self):
+        """ Go back """
+        logging.info('Going back')
+        self.context.go_back()
+        return self
