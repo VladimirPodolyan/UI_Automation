@@ -5,6 +5,7 @@ from data_for_testing.web.selenium.components.mixin import MixinSelenium
 
 
 class SidebarSelenium(WebElement, MixinSelenium):
+
     def __init__(self):
         super().__init__(By.CSS_SELECTOR, '[data-qa-marker = sidebar]', name='Sidebar')
 

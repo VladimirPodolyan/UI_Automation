@@ -5,6 +5,8 @@ from data_for_testing.web.playwright.components.sidebar import SidebarPlaywright
 
 
 class SidebarPagePlaywright(WebPage):
+    """ Correspond to sidebar_page.html """
+
     def __init__(self):
         self.sidebar = SidebarPlaywright()
         super(SidebarPagePlaywright, self).__init__(locator='[data-qa-marker = sidebar-page]', name='Sidebar page')
