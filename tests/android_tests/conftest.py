@@ -8,7 +8,7 @@ from appium.webdriver.appium_service import AppiumService
 from appium.webdriver.webdriver import WebDriver as AppiumDriver
 from selenium_master.driver.mobile_driver import MobileDriver
 
-from data_for_testing.utils import set_logging_settings
+from data_for_testing.utils import set_logging_settings, resize_image
 
 
 set_logging_settings()
@@ -111,6 +111,13 @@ def pytest_runtest_makereport(item, call):
     xfail = hasattr(result, 'wasxfail')
     failure = (result.skipped and xfail) or (result.failed and not xfail)
 
-    if failure and item.config.getoption('--alluredir') and call.when != 'setup' and driver:
-        screenshot_name = f'screenshot_{item.name}'
-        allure.attach(driver.get_screenshot_as_png(), name=screenshot_name, attachment_type=AttachmentType.PNG)
+    if failure and item.config.getoption('--alluredir') and driver:
+        logs = driver.get_log('logcat')
+        if logs:
+            logs = list(map(lambda log: log['message'], logs))
+            allure.attach(str(logs), name='Driver logs', attachment_type=AttachmentType.TEXT)
+
+        if call.when != 'setup':
+            screenshot_name = f'screenshot_{item.name}'
+            screenshot_binary = driver.get_screenshot_as_png()
+            allure.attach(resize_image(screenshot_binary), name=screenshot_name, attachment_type=AttachmentType.JPG)
