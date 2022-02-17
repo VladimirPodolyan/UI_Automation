@@ -44,7 +44,7 @@ def appium(request):
 
 @pytest.fixture(scope='session')
 def emulator():
-    """ Programmatically start and stop emulator. Not used at this time """
+    """ Programmatically start and stop emulator """
     device_name, device_udid = ios_desired_caps['deviceName'], ios_desired_caps['udid']
     logging.info(f'Starting simulator {device_name}')
     process = shell_running_command(f'xcrun simctl boot {device_udid}')

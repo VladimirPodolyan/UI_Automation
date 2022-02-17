@@ -37,7 +37,7 @@ def shell_command(cmd,  **kwargs):
     if process.stdout:
         process.output = process.stdout.decode('utf8').replace('\n', '')
     if process.stderr:
-        process.output = process.stderr.decode('utf8').replace('\n', '')
+        process.errors = process.stderr.decode('utf8').replace('\n', '')
     if isinstance(process.returncode, int):
         process.is_success = process.returncode == 0
 
